@@ -127,7 +127,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Yk-vi-BfS">
-                                <rect key="frame" x="154" y="525" width="49" height="31"/>
+                                <rect key="frame" x="160" y="525" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="layerChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="5O8-bd-8KR"/>

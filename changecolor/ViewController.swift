@@ -39,7 +39,8 @@ class ViewController: UIViewController {
         blueLabel.text = String (format: "%.2f", blueSlider.value)
         alphaLabel.text = String (format: "%.2f", alphaSlider.value)
     }
-    //
+    
+    //先產生漸層，再利用switch決定漸層要開啟還是關掉
     let gradientLayer = CAGradientLayer()
     
     @IBAction func layerChanged(_ sender: UISwitch) {
