@@ -40,16 +40,9 @@ class ViewController: UIViewController {
         alphaLabel.text = String (format: "%.2f", alphaSlider.value)
     }
     
+    let gradientLayer = CAGradientLayer()
     
-    @IBAction func graSliderChanged(_ sender: UISlider) {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = backgroundImageView.bounds
-        gradientLayer.colors = [UIColor.red.cgColor, UIColor.yellow.cgColor]
-        backgroundImageView.layer.addSublayer(gradientLayer)
-
-    }
     @IBAction func layerChanged(_ sender: UISwitch) {
-        let gradientLayer = CAGradientLayer()
         if layerSwitch.isOn == true {
             layerLabel.text = String("開")
             gradientLayer.frame = backgroundImageView.bounds
@@ -58,7 +51,7 @@ class ViewController: UIViewController {
         }
         else {
             layerLabel.text = String("關")
-    
+            gradientLayer.removeFromSuperlayer()
         }
     }
     
