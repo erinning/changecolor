@@ -9,16 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //拉好需要的outlet
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var alphaSlider: UISlider!
-    @IBOutlet weak var gradationSlider: UISlider!
     @IBOutlet weak var layerSwitch: UISwitch!
     @IBOutlet weak var randomButton: UIButton!
     @IBOutlet weak var snowmanImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
-    
     @IBOutlet weak var redLabel: UILabel!
     @IBOutlet weak var greenLabel: UILabel!
     @IBOutlet weak var blueLabel: UILabel!
@@ -31,6 +30,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    //拉action調整顏色及透明度
     @IBAction func slideColorChanged(_ sender: UISlider) {
         snowmanImageView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
         
@@ -39,18 +39,18 @@ class ViewController: UIViewController {
         blueLabel.text = String (format: "%.2f", blueSlider.value)
         alphaLabel.text = String (format: "%.2f", alphaSlider.value)
     }
-    
+    //
     let gradientLayer = CAGradientLayer()
     
     @IBAction func layerChanged(_ sender: UISwitch) {
         if layerSwitch.isOn == true {
-            layerLabel.text = String("開")
+            layerLabel.text = String("On")
             gradientLayer.frame = backgroundImageView.bounds
         gradientLayer.colors = [UIColor.red.cgColor, UIColor.yellow.cgColor]
         backgroundImageView.layer.addSublayer(gradientLayer)
         }
         else {
-            layerLabel.text = String("關")
+            layerLabel.text = String("Off")
             gradientLayer.removeFromSuperlayer()
         }
     }
